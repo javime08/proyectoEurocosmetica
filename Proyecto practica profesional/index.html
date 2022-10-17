@@ -1,0 +1,135 @@
+<html>
+	<head>
+		<title>Pedido Digital</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="robots" content="noimageindex, noarchive">
+      	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+      	<meta name="mobile-web-app-capable" content="yes">
+      	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
+      	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<link rel="stylesheet" href="estilo.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="license" href="https://www.opensource.org/licenses/mit-license/">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      	
+		
+	
+	<body id="body">
+		<div id="editor"></div>
+		<header>
+			<h1 id="titulo">Pedido digital </h1>
+        	<table class="infovendedor">
+				<thead>
+					<tr>
+						<th><span readonly>Codigo Vendedor</span></th>
+						<th><span readonly>Nombre</span></th>
+                  		<th><span readonly>Codigo Linea</span></th>
+						<th><span readonly>Linea</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td ><input type="number" value="" min="1" max="5" placeholder="5"></td>
+						<td ><input type="text" value="" id="texto" contenteditable="true"></td> 
+						<td ><input type="number" value="" min="1" max="5" placeholder="10"></td> 
+						<td ><input type="text" value="" ></td> 
+						
+					</tr>
+				</tbody>
+			</table>
+		</header>
+
+		<section>
+			<table class="infocliente">
+				<thead>
+					<tr>
+						<th><span readonly>Codigo cliente</span></th>
+						<th><span readonly>Nombre Comercial</span></th>
+                  		<th><span readonly>Nombre Cliente</span></th>
+						<th><span readonly>Ciudad</span></th>
+						<th><span readonly>Direccion</span></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="number" min="1" max="500" contenteditable="true" placeholder="15"></td>
+						<td><input type="text" contenteditable="true" class="width-dynamic proba dva" id="texto"></td>
+						<td><input type="text" ></td>
+						<td><input type="text" ></td>
+						<td><input type="text" ></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<article>
+			<h1>Informacion Factura</h1>
+			<table class="meta">
+				<tr>
+					<th><span>Tipo de factura</span></th>
+					<td> 	
+						<label for="credito">Credito</label>
+						<input type="radio" id="credito" name="Opcion" value="Credito">
+						<label for="contado">Contado</label>
+						<input type="radio" id="contado" name="Opcion" value="Contado">
+					</td>	
+				</tr>
+				<tr>
+					<th readonly><span >Viaje o contrato</span></th>
+					<td><input type="text" placeholder="viaje"></td>
+				</tr>
+
+           	 	<tr>
+					<th><span readonly>Fecha</span></th>
+               		<th><input type="date" id="Fecha" name="Fecha" >  
+               	</th>
+            	</tr>
+				<tr >
+					<th>Comentario:</th>
+				<td><input type="text" placeholder="el cliente no se encontraba"></td>
+				</tr>
+			</table>
+			<form class="col-4" >
+				<label>Codigo del producto</label>
+				<input type="text" class="form-control" id="codigo" placeholder="f43">
+				<label>Nombre del producto</label>
+				<input type="text" class="form-control" id="nombre" placeholder="SHAMPOO NO.1 PARA CABELLO NORMAL 250ML">
+				<label>Precio:</label>
+				<input type="number" class="form-control" id="precio" placeholder="269.57">
+				<label>Cantidad:</label>
+				<input type="number" class="form-control" id="cantidad" placeholder="10">
+				<label>Bonificacion:</label>
+				<input type="text" class="form-control" id="bonificacion" value="" placeholder="269.57">
+		
+				<input type="button" value="Agregar" class="btn btn-success mt-3" id="agregar">
+				
+			</form>
+			<div class="col-10" id="productos" >
+				<table class="table table-striped" id="lista">
+					<tr>
+						<td>Codigo Producto</td>
+						<td>Nombre Producto</td>
+						<td>Precio</td> 
+						<td>Cantidad</td>
+						<td>Subtotal</td>
+						<td>I.S.V.</td>
+						<td>Bonificacion</td>
+						<td>Total</td>
+						<td>Acciones</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-10 text-right" id="total"></div>
+		</article> 
+		<footer id="footer" class="footer">
+			<button onclick="window.print()" id="imprimir">Imprimir</button>			
+		</footer>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+		<script src="main.js"></script>
+		
+	</body>
+</html>
